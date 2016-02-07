@@ -13,7 +13,6 @@
   "author": "Sunny Karira",
   "license": "ISC",
   "dependencies": {
-    "express": "~4.13.4",
     "body-parser": "~1.14.2",
     "morgan": "~1.6.1",
     "ejs": "~0.8.5",
@@ -26,13 +25,14 @@
     "jsonwebtoken": "~5.5.4",
     "bcrypt": "~0.8.5",
     "sequelize": "~3.19.2",
-    "express-flash": "0.0.2"
+    "express-flash": "0.0.2",
+    "express": "~4.13.4"
   },
- "devdependencies": {
+  "devdependencies": {
+     "express": "~4.13.4",
     "crypto-js": "~3.1.6",
     "jsonwebtoken": "~5.5.4",
     "bcrypt": "~0.8.5",
-    "express": "~4.13.3",
     "body-parser": "~1.13.3",
     "morgan": "~1.6.1",
     "ejs": "~0.8.5",

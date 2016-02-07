@@ -1,4 +1,6 @@
 var express = require('express');
+var expressLayouts = require('express-ejs-layouts');
+
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var ejs = require('ejs');
@@ -12,6 +14,7 @@ var bcrypt = require('bcrypt');
 
 
 var app = express();
+app.use(expressLayouts);
 //app.use(bodyParser());
 app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
@@ -23,6 +26,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 // Engine
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
+app.set('layout', 'layout_front');
 
 
 
