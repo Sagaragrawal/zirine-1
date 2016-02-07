@@ -1,0 +1,87 @@
+body{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+	background: #f9f9f9;
+	padding-top: 122px;
+	position: relative;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+}
+
+.transition{
+	transition: all .5s ease-out;
+}
+
+.navbar-fixed-top{
+	border-width: 0;
+}
+
+.navbar-default{
+	background-color: #fff;
+	//box-shadow: rgba(0,0,0,0.4) 0 1px 3px;
+	box-shadow: rgba(130, 181, 65, 0.3) 0 1px 3px;
+}
+
+.navbar-brand{
+	height: auto;
+	//padding: 30px 15px;
+	padding: 1px;
+	font-weight: 600;
+	font-size: 24px;
+	font-family: 'Raleway', sans-serif;
+	transition: all .2s ease-out;
+}
+
+.navbar-brand img{
+	width: 80px;
+	display: inline-block;
+}
+
+.condensed .navbar-brand{
+	//padding: 15px 15px;
+}
+
+.condensed .navbar-brand img{
+	width: 50px;
+}
+
+.navbar-brand .themed{
+	color: #52b6df;
+	font-weight: 700;
+}
+
+.navbar-brand .glyphicon{
+	line-height: 0.6;
+}
+
+.navbar-default .navbar-nav>li>a{
+	padding: 30px 20px;
+	text-transform: uppercase;
+	font-weight: 600;
+	border-bottom: 3px solid transparent;
+	transition: all .2s ease-out;
+}
+
+.condensed .navbar-default .navbar-nav>li>a{
+	padding: 15px 20px;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>li>a:hover{
+	background: transparent;
+	color: #52b6df;
+	border-bottom: 3px solid #52b6df;
+}
+
+.navbar-toggle{
+	margin-top: 23px;
+	margin-bottom: 23px;
+	transition: all .5s ease-out;
+}
+
+.condensed .navbar-toggle{
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
