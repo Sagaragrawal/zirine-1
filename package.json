@@ -26,10 +26,11 @@
     "bcrypt": "~0.8.5",
     "sequelize": "~3.19.2",
     "express-flash": "0.0.2",
-    "express": "~4.13.4"
+    "express": "~4.13.4",
+    "express-ejs-layouts": "~2.0.0"
   },
   "devdependencies": {
-     "express": "~4.13.4",
+    "express": "~4.13.4",
     "crypto-js": "~3.1.6",
     "jsonwebtoken": "~5.5.4",
     "bcrypt": "~0.8.5",
@@ -42,6 +43,7 @@
     "sequelize": "~3.5.1",
     "pg": "~4.4.1",
     "pg-hstore": "~2.3.2",
-    "express-flash": "0.0.2"
+    "express-flash": "0.0.2",
+    "express-ejs-layouts": "~2.0.0"
   }
 }
