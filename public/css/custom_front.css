@@ -1,0 +1,31 @@
+
+
+ /* Navbar */
+.navbar a {
+ color:#cccccc !important;
+}
+
+.navbar a:hover {
+ color:#ffffff !important;
+ background-color:#646464 !important;
+}
+
+.navbar-header .navbar-brand {
+ color:white !important;
+ font-size:1.5em;
+}
+
+body{
+    background-color: #525252;
+}
+
+.vertical-center{
+	min-height: 100vh;
+	margin: 0;
+	display: flex;
+	align-items: center;
+}
+
+
+
+/* Navbar end */

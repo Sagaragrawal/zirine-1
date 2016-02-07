@@ -1,0 +1,22 @@
+{
+  "name": "Ideation",
+  "version": "1.0.0",
+  "description": "An ideation tool for employees",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ideation",
+    "zirine"
+  ],
+  "author": "Sunny Karira",
+  "license": "ISC",
+  "dependencies": {
+    "express": "~4.13.4",
+    "body-parser": "~1.14.2",
+    "morgan": "~1.6.1",
+    "ejs": "~2.4.1",
+    "ejs-mate": "~2.3.0"
+  }
+}
