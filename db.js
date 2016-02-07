@@ -28,7 +28,5 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 //Association
-db.token.belongsTo(db.user);
-
 
 module.exports = db;

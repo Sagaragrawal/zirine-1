@@ -105,8 +105,6 @@ module.exports = function(sequelize, DataTypes) {
 				return new Promise(function(resolve, reject) {
 
 
-					console.log(typeof body.email + ' ' + typeof body.password);
-
 					if (typeof body.email === 'string' && typeof body.password === 'string') {
 
 						user.findOne({

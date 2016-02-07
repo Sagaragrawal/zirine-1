@@ -32,10 +32,15 @@ app.use(function(req, res, next){
 	next();
 });
 
+
 app.get('/', function (req, res){
 
-	res.render('main/home_front');
+	res.render('main/home_front', {
+		message: ''
+	});
 });
+
+
 
 
 // POST /users
@@ -50,16 +55,18 @@ app.post('/users', function (req, res){
 		password: body.password,
 	}).then(function(user) {
 
-		res.render('accounts/success_creation');
+		res.render('accounts/success_creation' , {
+			message: user.username + "'s account has been generated"
+		});
 	}).catch(function(e) {
 		res.render('accounts/404');
 	});
 
 });
 
-// POST /users/login
+// POST /login
 
-app.post('/users/login', function(req, res) {
+app.post('/login', function(req, res) {
 	var body = _.pick(req.body, 'email', 'password');
 	var userInstance;
 
@@ -69,25 +76,27 @@ app.post('/users/login', function(req, res) {
 		var token = user.generateToken('authentication');
 		userInstance = user;
 		return db.token.create({
-			token: token
-			
+			token: token,
+			userId: user.id
 		});
-
-	}).then(function(tokenInstance){
-
-		//res.header('Auth', tokenInstance.get('token')).json(userInstance.toPublicJSON());
-		res.render('accounts/success_creation');
 		
-	}). catch(function(e) {
 
-		res.status(401).send();
+	}).then(function(token){
+		res.render('accounts/success_creation', {
+			message: 'Successfully Logged in'
+		});
+	}).catch(function(e) {
+
+		res.render('main/home_front', {
+			message: 'Please provide valid Email Id or Password'
+		});
 	});
 
 });
 
 
 
-db.sequelize.sync().then(function() {
+db.sequelize.sync({force: true}).then(function() {
 
 	// Server will start in db
 	// after db starts server will start

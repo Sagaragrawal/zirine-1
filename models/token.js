@@ -20,6 +20,7 @@ module.exports = function(sequelize, DataTypes){
 				this.setDataValue('tokenHash', hash);
 			}
 		},
-		tokenHash: DataTypes.STRING
+		tokenHash: DataTypes.STRING,
+		userId: DataTypes.INTEGER
 	});
 };
