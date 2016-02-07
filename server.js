@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', function (req, res){
 
-	res.render('main/home_front');
+	res.header('text/html').render('main/home_front');
 });
 
 
