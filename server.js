@@ -14,7 +14,7 @@ var bcrypt = require('bcrypt');
 
 
 var app = express();
-app.use(expressLayouts);
+
 //app.use(bodyParser());
 app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 // Engine
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
-app.set('layout', 'layout_front');
+
 
 
 
@@ -45,6 +45,15 @@ app.get('/', function (req, res){
 });
 
 
+app.get('/login', function (req, res){
+
+	res.render('accounts/success_creation', {
+		message: ''
+	});	
+});
+
+
+
 
 
 // POST /users
@@ -60,7 +69,8 @@ app.post('/users', function (req, res){
 	}).then(function(user) {
 
 		res.render('accounts/success_creation' , {
-			message: user.username + "'s account has been generated"
+			message: user.username + "'s account has been generated",
+			count : 1
 		});
 	}).catch(function(e) {
 		res.render('accounts/404');
@@ -93,6 +103,31 @@ app.post('/login', function(req, res) {
 
 		res.render('main/home_front', {
 			message: 'Please provide valid Email Id or Password'
+		});
+	});
+
+});
+
+
+app.post('/addidea', function (req, res){
+	var body = _.pick(req.body, 'title', 'category', 'ideabody');
+	body.category = body.category.toLowerCase();
+	body.title = body.title.toLowerCase();
+
+	db.idea.create({
+		title: body.title,
+		category: body.category,
+		ideabody: body.ideabody
+	}).then(function (idea){
+
+		res.render('accounts/success_creation', {
+		message: idea.title + ' created'
+		});	
+
+	}, function (e){
+
+		res.render('accounts/success_creation',{
+			message: 'Idea already exists'
 		});
 	});
 

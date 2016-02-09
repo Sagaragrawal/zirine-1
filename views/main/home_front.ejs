@@ -3,12 +3,22 @@
  <div class="vertical-center">
 		<div class="container">
 
+		<div class="row" >
+
+			<div class="yoyo col-lg-12 col-md-12 col-sm-12 col-xs-12 wow fadeInRight" align="center">
+					<h1>Zirine</h1>
+			</div>
+			<div class="yoyo col-lg-12 col-md-12 col-sm-12 col-xs-12 wow fadeInLeft" align="center">
+					<p>Where Ideas are generated.</p>
+			</div>
+		</div>
+
 		<div class="row">
 				<% if(message.length > 0) { %>
 
 			  <div class="alert alert-danger alert-dismissible" role="alert">
 			      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			      <!--<strong>User</strong> successfully created.--!>
+			     
 
 			     <%= message %>
 
@@ -16,10 +26,12 @@
 		  	 </div>
 
 		        	<% } %>
-				<div class = "col-md-4 col-md-offset-8 well">
 
 
-					<h1 class="text-center">Sign Up</h1>
+				<div class = "col-md-4 col-md-offset-4 well wow rotateInUpRight" data-wow-delay="0.8s">
+
+
+					<h1 class="text-center" >Sign Up</h1>
 					<form id = "main" method="post" action="/users">
 
 					<div class= "form-group">

@@ -22,13 +22,13 @@
 	        <!--<a class="navbar-brand" href="#">
 	          Yes
 	          <span class="themed"> Dhaba</span>
-	        </a>--!>
+	        </a>!>
 	        
-	        </div><!-- navbar-header -->
+	        </div><! navbar-header -->
 	        
 	        <div class="collapse navbar-collapse" id="collapse">
 
-	            <ul class="nav navbar-nav">
+	            <ul class="nav navbar-nav navbar-left">
 	              <li class=""><a href="#">Technology</a></li>
 	              <li class=""><a href="#">Science</a></li>
 	              <li><a href="#">Cooking</a></li>
@@ -36,9 +36,61 @@
 	              <li><a href="#">Movies</a></li>
 	              <li><a href="#">Magazines</a></li>
                   <li><a href="#">Jobs</a></li>
-	              <li><a href="#">Open Area</a></li>
-	            </ul>        
+	              <li><a href="#">Open</a></li>
+
+	            </ul>  
+	              
 
 	        </div><!-- collapse navbar-collapse -->
 	    </div><!-- container -->
+	    </div>
 	</nav>
+
+	<!-- Modal -->
+
+<!-- Button trigger modal -->
+			<button type="button" class="col-lg-4 col-lg-offset-4 btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+			  Add Idea
+			</button>
+
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel"></h4>
+			      </div>
+			      <div class="modal-body">
+			         <form method="post" action="/addidea">
+            		 <div class="form-group">
+            		   <label>Title</label>
+                       <input type="text" name="title" class="form-control">
+            		 </div>
+
+            		 <div class="form-group">
+            		   <label>Category</label>
+                       <input type="text" name="category" class="form-control">
+            		 </div>
+           
+           			 <div class="form-group">
+           			   <label>Idea</label>
+              		   <input type="text" name="ideabody" class="form-control">
+            		 </div>
+
+            		 <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        <button type="submit" class="btn btn-primary">Save</button>
+			        </div>
+
+			      </div>
+			      
+			    </div>
+			  </div>
+			</div>
+
+	<!-- End Modal -->
+
+
+</body>
+
