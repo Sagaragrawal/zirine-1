@@ -29,12 +29,7 @@ app.set('view engine', 'ejs');
 
 
 
-
-// All routes have user object
-app.use(function(req, res, next){
-	res.locals.user = req.user;
-	next();
-});
+var userInstance ;
 
 
 app.get('/', function (req, res){
@@ -47,11 +42,30 @@ app.get('/', function (req, res){
 
 app.get('/login', function (req, res){
 
+
 	res.render('accounts/success_creation', {
 		message: ''
 	});	
 });
 
+app.get('/logout', function (req, res){
+
+		//req.logout();
+
+		if(typeof userInstance !== 'undefined'){
+		db.token.destroy({
+			where: {
+				userId : userInstance.get('id')
+			}
+		});
+		res.render('main/home_front', {
+			message: 'Thank you! See you again.'
+		});
+	}else{
+
+		res.redirect('/');
+	}
+});
 
 
 
@@ -68,9 +82,8 @@ app.post('/users', function (req, res){
 		password: body.password,
 	}).then(function(user) {
 
-		res.render('accounts/success_creation' , {
-			message: user.username + "'s account has been generated",
-			count : 1
+		res.render('main/home_front' , {
+			message: user.username + "'s account has been generated." + " Please Login to Continue.",
 		});
 	}).catch(function(e) {
 		res.render('accounts/404');
@@ -82,7 +95,6 @@ app.post('/users', function (req, res){
 
 app.post('/login', function(req, res) {
 	var body = _.pick(req.body, 'email', 'password');
-	var userInstance;
 
 	// Converting long route into autheticate function
 	db.user.authenticate(body).then(function(user) {

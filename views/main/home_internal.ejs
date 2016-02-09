@@ -1,0 +1,48 @@
+<%- layout('layout_internal') -%>
+
+
+<div class="container">
+
+		<div class="row">
+			<button type="button" class="col-lg-4 col-lg-offset-4 btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+			  Add Idea
+			</button><br><br><br><br><br>
+
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel"></h4>
+			      </div>
+			      <div class="modal-body">
+			         <form method="post" action="/addidea">
+            		 <div class="form-group">
+            		   <label>Title</label>
+                       <input type="text" name="title" class="form-control">
+            		 </div>
+
+            		 <div class="form-group">
+            		   <label>Category</label>
+                       <input type="text" name="category" class="form-control">
+            		 </div>
+           
+           			 <div class="form-group">
+           			   <label>Idea</label>
+              		   <input type="text" name="ideabody" class="form-control">
+            		 </div>
+
+            		 <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        <button type="submit" class="btn btn-primary">Save</button>
+			        </div>
+			        </form>
+
+			      </div>
+			      
+			    </div>
+			  </div>
+			</div>
+		</div>
+</div>
